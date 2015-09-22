@@ -37,10 +37,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="sliderStateLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="mouseStateLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="sliderValueTextArea" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="sliderValueTextArea" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="mouseLocationTrackTextArea" alignment="0" pref="57" max="32767" attributes="0"/>
-                              <Component id="mouseButtonTrackTextArea" alignment="0" max="32767" attributes="0"/>
+                              <Component id="mouseButtonTrackTextArea" alignment="0" pref="72" max="32767" attributes="0"/>
+                              <Component id="mouseLocationTrackTextArea" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -82,6 +82,10 @@
       </Properties>
       <Events>
         <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="sliderStateChanged"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sliderMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sliderMouseExited"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sliderMousePressed"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sliderMouseReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JProgressBar" name="progressBar">

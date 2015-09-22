@@ -44,6 +44,20 @@ public class MainFrame extends javax.swing.JFrame {
                 sliderStateChanged(evt);
             }
         });
+        slider.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                sliderMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                sliderMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                sliderMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                sliderMouseReleased(evt);
+            }
+        });
 
         progressBar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -75,10 +89,10 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sliderStateLabel)
                             .addComponent(mouseStateLabel)
-                            .addComponent(sliderValueTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sliderValueTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(mouseLocationTrackTextArea, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                                .addComponent(mouseButtonTrackTextArea, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                .addComponent(mouseButtonTrackTextArea, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                .addComponent(mouseLocationTrackTextArea, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -115,6 +129,26 @@ public class MainFrame extends javax.swing.JFrame {
         sliderValueTextArea.setText(""+sliderValue);
         progressBar.setValue(sliderValue);
     }//GEN-LAST:event_sliderStateChanged
+
+    private void sliderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderMouseEntered
+        // TODO add your handling code here:
+        mouseLocationTrackTextArea.setText("Dentro");
+    }//GEN-LAST:event_sliderMouseEntered
+
+    private void sliderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderMouseExited
+        // TODO add your handling code here:
+        mouseLocationTrackTextArea.setText("Fuera");
+    }//GEN-LAST:event_sliderMouseExited
+
+    private void sliderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderMousePressed
+        // TODO add your handling code here:
+        mouseButtonTrackTextArea.setText("Apretado");
+    }//GEN-LAST:event_sliderMousePressed
+
+    private void sliderMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderMouseReleased
+        // TODO add your handling code here:
+        mouseButtonTrackTextArea.setText("Liberado");
+    }//GEN-LAST:event_sliderMouseReleased
 
     /**
      * @param args the command line arguments
